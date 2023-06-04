@@ -1,0 +1,446 @@
+BMI CALCULATOR WITH REMARK
+
+height = float(input("enter your height in m: "))
+weight = float(input("enter your weight in kg: "))
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+bmi=round(weight/height**2)
+if bmi<18.5:
+    print(f" your bmi is {bmi} you are underweight")
+elif bmi<25:
+    print(f" your bmi is {bmi}you have a normal weight")
+elif bmi<30:
+    print(f"your bmi is {bmi} you are slightly overweight")
+elif bmi<35:
+    print(f"your bmi is {bmi} you are obese")
+else:
+    (f"your bmi is {bmi} you are clinically obese")
+
+2) Write a program that works out whether if a given year is a leap year. A normal year has 365 days, leap years have 366, with an extra day in February. The reason why we have leap years is really fascinating, this video does it more justice:
+
+
+year = int(input("Which year do you want to check? "))
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+if year % 4==0:
+  if year % 100==0:
+    if year % 400==0:
+     print("leap year")
+    else: 
+     print("not a leap year")
+  else:
+   print("leap year")
+else:
+ print("not a leap year")
+
+
+
+
+
+print("Welcome to Python Pizza Deliveries!")
+size = input("What size pizza do you want? S, M, or L ")
+add_pepperoni = input("Do you want pepperoni? Y or N ")
+extra_cheese = input("Do you want extra cheese? Y or N ")
+
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+bill=0
+if size =="S":
+ bill+=15
+elif size=="M":
+ bill+=20
+else:
+ bill+=25
+if add_pepperoni=="Y":
+    if size=="S":
+        bill+=2
+    else:
+        bill+=3
+if extra_cheese=="Y":
+ bill+=1
+ print(f"Your final bill is: ${bill}")
+
+
+
+
+
+You are going to write a program that tests the compatibility between two people.
+
+To work out the love score between two people:
+
+Take both people's names and check for the number of times the letters in the word TRUE occurs. 
+
+Then check for the number of times the letters in the word LOVE occurs. 
+
+Then combine these numbers to make a 2 digit number.
+
+For Love Scores less than 10 or greater than 90, the message should be:
+
+"Your score is **x**, you go together like coke and mentos."
+For Love Scores between 40 and 50, the message should be:
+
+"Your score is **y**, you are alright together."
+Otherwise, the message will just be their score. e.g.:
+
+"Your score is **z**."
+
+
+
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+combined_string=name1+name2
+lower_case_string = combined_string.lower()
+
+t = lower_case_string.count("t")
+r = lower_case_string.count("r")
+u = lower_case_string.count("u")
+e = lower_case_string.count("e")
+
+true =t + r + u + e
+
+l = lower_case_string.count("l")
+o = lower_case_string.count("o")
+v = lower_case_string.count("v")
+e = lower_case_string.count("e")
+
+love =l + o + v + e
+
+love_score = int(str(love) + str(true))
+print(love_score)
+if (love_score < 10) or (love_score > 90):
+    print(f"your score is {love_score}, you go together like coke and mentos.")
+elif (love_score>=40) and (love_score<=50):
+    print(f"your score is {love_score}, you are alright together.")
+else:
+    print(f"your score is {love_score}")
+ 
+
+treasure game
+
+print("welcome  to the treasure island. your mission is to find the treasure")
+choice1= input('you are at the crossroad where do you want to go choose between "left" or "right " ').lower()
+if choice1=="right":
+  print("game over! you'r car crashed")
+else:
+  choice2=input('theres a river to cross! do you wanna "cross" or "wait" for the boat').lower()
+  if choice2=="swim":
+    print("game over! crocodile ate you")
+  else:
+    choice3=input('you just reached the treasure house! which door you wanna open? "red","blue" or "yellow"')
+    if choice3=="red":
+      print("game over! you just fell into a pit")
+    elif choice3=="yellow":
+      print("hurrey!!! you got the treasure. you just completed the treasure mission.")
+    elif choice3==blue:
+      print("game over!! drangons just ate you")
+    else:
+        print("game over")
+
+
+
+who will pay the bill at random
+
+import random
+
+# Split string method
+names_string = input("Give me everybody's names, separated by a comma. ")
+names = names_string.split(", ")
+
+#Write your code below this line 👇
+
+#Get the total number of items in list.
+num_items = len(names)
+#Generate random numbers between 0 and the last index. 
+random_choice = random.randint(0, num_items - 1)
+#Pick out random person from list of names using the random number.
+person_who_will_pay = names[random_choice]
+
+print(person_who_will_pay + " is going to buy the meal today!")
+
+
+
+# You are going to write a program that calculates the sum of all the even numbers from 1 to 100. Thus, the first even number would be 2 and the last one is 100:
+
+# i.e. 2 + 4 + 6 + 8 +10 ... + 98 + 100
+
+# Important, there should only be 1 print statement in your console output. It should just print the final total and not every step of the calculation.
+even_number=0
+for number in range(2, 101, 2):
+  even_number+=number
+print (even_number)
+
+
+
+# ou are going to write a program that automatically prints the solution to the FizzBuzz game.
+
+# Your program should print each number from 1 to 100 in turn.
+
+# When the number is divisible by 3 then instead of printing the number it should print "Fizz".
+
+# When the number is divisible by 5, then instead of printing the number it should print "Buzz".`
+
+#   And if the number is divisible by both 3 and 5 e.g. 15 then instead of the number it should print "FizzBuzz"
+number=0
+for number in range(1, 101,):
+  if number%3 == 0 and number%5 == 0:
+    print("fizzbizz")
+  elif number%3==0:
+    print("fizz")
+  elif number%5==0:
+    print("buzz")
+  else:
+    print(number)
+print(number)
+
+
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+def jump():
+    move()
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+jump()
+jump()
+jump()
+jump()
+jump()
+jump()
+
+
+
+using while loop 
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+def jump():
+    move()
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+    
+number_of_hudles= 6
+while number_of_hudles > 0:
+    jump()
+    number_of_hudles-=1
+    print(number_of_hudles)
+
+using while not at_goal(): and if there's a wall
+
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+def jump():
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+ 
+while not at_goal():
+    if wall_in_front():
+       jump()
+    else:
+        move()
+
+
+hurdle 4
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+    
+def jump():
+    turn_left()
+    while wall_on_right():
+        move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+   
+    while front_is_clear():
+        move()
+    turn_left()
+while not at_goal():
+    if wall_in_front():
+       jump()
+    else:
+        move()
+----------->>>>>.>>>>>>>.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+import math
+round using math.ceil
+creating function
+calculating number of cans used to paint a wall
+
+import math
+# 🚨 Don't change the code below 👇
+def paint_calc(height,width,cover):
+    area= height*width
+    num_of_cans= math.ceil(area/cover)
+    print(f"you'll need {num_of_cans} cans of paint")
+test_h = int(input("Height of wall: "))
+test_w = int(input("Width of wall: "))
+coverage =  5
+paint_calc(height=test_h, width=test_w ,cover=coveragee)
+
+
+
+
+
+encoding and decoding
+cipher text 
+
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+direction=input("Type encode to encrypt and deocde to decrypt:: \n")
+text=input("Type your message:: ")
+shift=int(input("Type the shift amount::"))
+def encrypt(plain_text,shift_amount):
+  cipher_text =""
+  for letter in plain_text:
+    position =alphabet.index(letter)
+    new_position=position+shift_amount 
+    new_letter=alphabet[new_position]
+    cipher_text+=new_letter
+  print(f"the encoded text is {cipher_text}")
+# encrypt(plain_text=text,shift_amount=shift)
+def decrypt(cipher_text, shift_amount):
+  plain_text=""
+  for letter in cipher_text:
+    
+    position= alphabet.index(letter)
+    new_position= position-shift_amount
+    plain_text+=alphabet[new_position]
+  print(f"the decoded text is {plain_text}")
+if direction=="encode":
+   encrypt(plain_text=text,shift_amount=shift)
+elif direction=="decode":
+   decrypt(cipher_text=text, shift_amount=shift)
+    
+    
+
+ceasar cipher in less code
+
+
+end_text = "" why is this written in the code
+
+ChatGPT
+The variable end_text is used to store the result of the encryption or decryption process. It is initially an empty string ("") and is then populated with the transformed letters based on the shift amount.
+
+In each iteration of the loop, a letter from the start_text is processed. If the letter is in the alphabet, its position is calculated and shifted by the shift_amount. The resulting position is then used to retrieve the corresponding letter from the alphabet, which is concatenated to the end_text.
+
+The purpose of using an empty string for end_text is to start with an empty container that can be gradually filled with the transformed letters. By appending the shifted letters to end_text in each iteration, the final result is obtained by joining all the transformed letters together.
+
+At the end of the process, end_text contains the fully encrypted or decrypted message, which is then printed as the output.
+
+
+
+
+
+User
+ shift_amount *= -1 why is this written. what else can be written  
+
+ChatGPT
+The line shift_amount *= -1 is used to invert the sign of the shift_amount when the cipher direction is "decode". Multiplying the shift_amount by -1 effectively reverses the direction of the shift.
+
+Alternatively, you can use the -= operator to achieve the same result:
+
+python
+Copy code
+shift_amount -= shift_amount * 2
+This line subtracts twice the shift_amount from itself, effectively negating its value. Both shift_amount *= -1 and shift_amount -= shift_amount * 2 accomplish the same goal of reversing the shift direction.
+
+The purpose of this operation is to ensure that the shift is applied in the opposite direction during decryption. For example, if the shift amount is 3 for encryption, it should be -3 for decryption to reverse the effect and recover the original message.
+
+
+
+
+alphabet = [
+  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+  'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+  'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+]
+direction = input("Type encode to encrypt and deocde to decrypt:: \n")
+text = input("Type your message:: ")
+shift = int(input("Type the shift amount::"))
+
+
+def caesar(start_text, shift_amount, cipher_direction):
+  end_text = ""
+  if cipher_direction=="decode":
+    shift_amount*=-1
+    #5*-1=-5
+  for letter in start_text:
+    position = alphabet.index(letter)
+    new_position = position + shift_amount
+    end_text +=alphabet[new_position]
+  print(f"the {cipher_direction}d text is {end_text}")
+caesar(start_text=text,shift_amount=shift, cipher_direction=direction)
+
+
+continues calculator
+#calculator
+#addition
+def add(n1,n2):
+  return n1+n2
+#subtraction
+def sub(n1,n2):
+  return n1-n2
+#multiply
+def mul(n1,n2):
+  return n1*n2 
+#divide
+def div(n1,n2):
+  return n1/n2
+operations={
+  "+":add,
+  "-":sub,
+  "*":mul,
+  "/":div,
+}
+def calculator():
+  num1= int(input("what's the first number?: "))
+  for symbol in operations:
+    print(symbol)
+  should_continue =True
+  while should_continue:
+    operation_symbol=input("Pick an operation from the line above. ")
+    num2= int(input("what's the next number?: "))
+    calculation_function=operations[operation_symbol]
+    answer = calculation_function(num1,num2)
+  
+    print(f"{num1} {operation_symbol}{num2} = {answer}")
+    if input(f"Type 'y' to continue with{answer},or type'n' to start a new calculation: ")=="y":
+     num1=answer
+    else:
+     should_continue=False
+     calculator()
+calculator()
+    
